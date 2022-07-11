@@ -37,12 +37,8 @@ If you have any questions, be sure to ask. Good luck.
 ```
 	To end the program, enter 3
 >>> Enter an 8 bit binary value to be converted to hexadecimal...
-1
->>> Enter an 8 bit binary value to be converted to hexadecimal...
-1010101
->>> Enter an 8 bit binary value to be converted to hexadecimal...
-10001111
-15
+11010101
+213
 >>> Enter an 8 bit binary value to be converted to hexadecimal...
 3
 Program terminated

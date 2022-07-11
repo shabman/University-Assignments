@@ -73,7 +73,7 @@ int to_hex(unsigned int& input) {
 bool is_bin(const unsigned int& input) {
 	std::string istr = std::to_string(input);
 	bool is_bin = true;
-	if (istr.size() > 8 || istr.size() < 8)
+	if (istr.size() > MAX_INPUT_CHARS || istr.size() < MAX_INPUT_CHARS)
 		return false;
 	for (int i = 0; i < istr.size(); i++) {
 		if (istr[i] > '1' || !is_positive(static_cast<int>(istr[i]))) {

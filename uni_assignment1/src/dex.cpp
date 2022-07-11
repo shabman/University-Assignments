@@ -15,8 +15,6 @@
 
 #define HEX_IN ">>> Enter an 8 bit binary value to be converted to hexadecimal..."
 
-std::array<int, 1000> hex;
-
 int run() {
 	bool keep_alive 	= true;
 	bool retrying		= true;
@@ -33,7 +31,7 @@ int run() {
 		if (is_bin(input)) {
 			retrying = false;
 			unsigned int conv = static_cast<unsigned int>(input);
-			print(to_hex(conv));
+			print(to_decimal(conv));
 			retrying = true;
 		} else if (input == 3) {
 			print("Program terminated");
@@ -51,23 +49,18 @@ int get_input(const char* message) {
 	return in;
 }
 
-int to_hex(unsigned int& input) {
-	int i 		= 1;
-	int rem 	= 0;
-	int dec		= 0;
-	while (input > 0) {
-		rem = input % 2;
-		dec += rem * i;
-		i *= 2	;
-		input /= 10;
+int to_decimal(unsigned int& input) {
+	int dec = 0;
+	int i = 0;
+	int rem;
+
+	while (input != 0) {
+	  rem = input % 10;
+	  input /= 10;
+	  dec += rem * pow(2, i);
+	  ++i;
 	}
-	i = 0;
-	while (dec != 0) {
-		hex[i] = dec % 16;
-		dec /= 16;
-		i++;
-	}
-	return hex[0];
+	return dec;
 }
 
 bool is_bin(const unsigned int& input) {

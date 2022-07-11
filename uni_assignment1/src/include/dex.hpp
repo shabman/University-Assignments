@@ -31,7 +31,7 @@ int get_input(const char*);
  * Converts the 8 bit binary value to a hexadecimal value
  * Returns the converted value
  */
-int to_hex(unsigned int&);
+int to_decimal(unsigned int&);
 /**
  * Checks if the value is an 8 bit binary value
  * Returns true if it's binary, false if not

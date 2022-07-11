@@ -13,6 +13,7 @@
 #include <iostream>
 #include <string>
 #include <array>
+#include <cmath>
 
 /**
  * This will run on loop until the user exits the program
